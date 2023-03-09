@@ -20,7 +20,7 @@ extends_documentation_fragment:
     - quantumsheep.scaleway.scaleway
     - quantumsheep.scaleway.scaleway_waitable_resource
 requirements:
-    - scaleway >= 0.6.0
+    - scaleway >= 0.9.0
 options:
     state:
         description:

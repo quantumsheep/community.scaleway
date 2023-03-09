@@ -15,7 +15,7 @@ author:
 short_description: Scaleway inventory source
 version_added: "1.0.0"
 requirements:
-  - scaleway >= 0.6.0
+  - scaleway >= 0.9.0
 description:
   - Scaleway inventory plugin.
   - Uses configuration file that ends with '(scaleway|scw).(yaml|yml)'.

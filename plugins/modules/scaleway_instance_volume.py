@@ -20,7 +20,7 @@ extends_documentation_fragment:
     - quantumsheep.scaleway.scaleway
     - quantumsheep.scaleway.scaleway_waitable_resource
 requirements:
-    - scaleway >= 0.6.0
+    - scaleway >= 0.9.0
 options:
     state:
         description:
@@ -111,7 +111,7 @@ from ansible_collections.quantumsheep.scaleway.plugins.module_utils.scaleway imp
 
 try:
     from scaleway import Client
-    from scaleway.instance.v1 import InstanceV1API
+    from scaleway.instance.v1 import InstanceV1APIUtils
 
     HAS_SCALEWAY_SDK = True
 except ImportError:
@@ -119,7 +119,7 @@ except ImportError:
 
 
 def create(module: AnsibleModule, client: "Client") -> None:
-    api = InstanceV1API(client)
+    api = InstanceV1APIUtils(client)
 
     id = module.params.pop("id", None)
     if id is not None:
@@ -142,7 +142,7 @@ def create(module: AnsibleModule, client: "Client") -> None:
 
 
 def delete(module: AnsibleModule, client: "Client") -> None:
-    api = InstanceV1API(client)
+    api = InstanceV1APIUtils(client)
 
     volume = module.params.pop("volume", None)
 
